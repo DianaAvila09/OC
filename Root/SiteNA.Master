@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteNA.Master.cs" Inherits="Root.SiteNA" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Content/themes/base/all.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <style type="text/css">
+        .bg-emm {
+            background-color: #d63333 !important; /*EE0000*/
+            color: white;
+        }
+
+        table.fixedHeader-locked {
+            position: fixed !important;
+            top: 0 !important;
+            margin-top: 0px !important;
+        }
+
+        .modal-backdrop {
+            background-color: gray !important;
+            opacity: 0.5 !important;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: center;
+            color: #000000;
+            padding: 0 0 0 0;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ToolkitScriptManager ID="tsm1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/jquery-3.4.1.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-ui-1.12.1.js" />
+                <%--<asp:ScriptReference Path="~/Scripts/chosen.jquery.js" />--%>
+                <asp:ScriptReference Path="~/Scripts/jquery.numeric.js" />
+            </Scripts>
+        </asp:ToolkitScriptManager>
+        <nav class="navbar nav-pills navbar-expand-lg navbar-light bg-light">
+        <h3><a class="navbar-brand" href="#" title="Ordenes de Compra">WORKFLOW CAMBIO DE PRECIOS</a></h3>
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+         <div class="navbar-text">
+             <div class="input-group">
+                 <div class="input-group-prepend ">
+                    <span class="input-group-text"><span class="ui-icon ui-icon-person"></span></span>
+                 </div> 
+                 <%--<span class="input-group-text"></span>--%>
+                 <asp:Label ID="lblUsuario" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:Label>
+             </div>
+         </div>
+    </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <script language="javascript" type="text/javascript">
+            $(document).ready(function () {
+                $('.datepicker').datepicker({
+                    dateFormat: 'yy/mm/dd'
+                });
+                $('.numeric').numeric({ decimal: true, negative: true },
+                    function () {
+                        alert('TEST');
+                        this.value = '';
+                        this.focus();
+                    });
+            });
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9da22f8fc4674e09a5af8ee247d450c7" Name="Diagram1">
+        <EntityTypeShape EntityType="WFOCModel.WfcpMoneda" Width="1.5" PointX="2.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpRol" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpUsuario" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpUsuarioInRol" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpUsuarioInRol_WfcpRol" ManuallyRouted="false" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpUsuarioInRol_WfcpUsuario" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpDocumento" Width="1.5" PointX="12.625" PointY="4.25" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpWorkflow" Width="1.5" PointX="10.375" PointY="3" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpDocumento_WfcpWorkflow" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpDocumento_Estatus" Width="1.5" PointX="14.875" PointY="2.625" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpDocumento_Estatus_WfcpDocumento" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpDocumento_Estatus_WfcpRol" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpEstatus" Width="1.5" PointX="12.625" PointY="0.75" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpDocumento_Estatus_WfcpEstatus" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpEstatus_WfcpWorkflow" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpNuevaPartida" Width="1.5" PointX="14.875" PointY="6.875" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpNuevaPartida_WfcpDocumento" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpNuevaPartida_WfcpMoneda" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpLog_ET_RETURN" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpCambioPrecio" Width="1.5" PointX="17.875" PointY="4.875" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpCambioPrecio_WfcpDocumento" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpCambioPrecio_WfcpMoneda" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpTipoProcuracion" Width="1.5" PointX="3.375" PointY="4.875" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpNuevaPartida_WfcpTipoProcuracion" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpUnidadMedida" Width="1.5" PointX="5.375" PointY="4.875" />
+        <AssociationConnector Association="WFOCModel.FK_WfcpNuevaPartida_WfcpUnidadMedida" />
+        <EntityTypeShape EntityType="WFOCModel.WfcpDocumento_Proveedor" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

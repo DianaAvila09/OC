@@ -1,0 +1,14 @@
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\Job.PricesWF.exe.config
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\Job.PricesWF.exe
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\Job.PricesWF.pdb
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\EntityFramework.dll
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\EntityFramework.xml
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\obj\Debug\Job.PricesWF.csproj.CoreCompileInputs.cache
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\obj\Debug\Job.PricesWF.csproj.CopyComplete
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\obj\Debug\Job.PricesWF.exe
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\obj\Debug\Job.PricesWF.pdb
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\sapnco.dll
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\sapnco_utils.dll
+C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\obj\Debug\Job.PricesWF.csprojAssemblyReference.cache

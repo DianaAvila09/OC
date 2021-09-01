@@ -1,0 +1,19 @@
+
+**** Log file opened by process 6044 at 2019-11-28 12:10:12 (UTC-06:00 Hora estándar central (México))
+
+SAP .NET Connector 3.0 with file version 3.0.17.0 running on 64-bit .NET Framework 4.0.30319.42000
+Program: C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug\Job.PricesWF.exe
+Working directory: C:\Users\guapa\Documents\PROYECTOS\EMM\OC\Job.PricesWF\bin\Debug
+Operating system: Windows 8 Professional 64-bit 
+Processor: 12x AMD64 (or x64)
+SAP release: 721, Kernel release: 721, Kernel patch level: 623
+Hostname: DESKTOP-PKJSRHL, IP address: 10.103.176.140, IP_v6 address: 
+
+Default trace level: None
+
+>> Error entry 2019-11-28 12:10:12.810 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Destination name is null
+   en SAP.Middleware.Connector.RfcDestinationManager.GetDestination(String destinationName)
+>> Error entry 2019-11-28 12:10:48.075 [Thread 1]
+SAP.Middleware.Connector.RfcInvalidParameterException: Destination name is null
+   en SAP.Middleware.Connector.RfcDestinationManager.GetDestination(String destinationName)

@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WFOCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="WfcpLog_ET_RETURN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentoId" Type="Int32" Nullable="false" />
+    <Property Name="fecha_insert" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IDENTIFICADOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NUMBER" Type="Int32" Nullable="false" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WFOCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="WfcpLog_ET_RETURN" EntityType="Self.WfcpLog_ET_RETURN" />
+    <EntitySet Name="WfcpCambioPrecio" EntityType="WFOCModel.WfcpCambioPrecio" />
+    <EntitySet Name="WfcpDocumento" EntityType="WFOCModel.WfcpDocumento" />
+    <EntitySet Name="WfcpDocumento_Estatus" EntityType="WFOCModel.WfcpDocumento_Estatus" />
+    <EntitySet Name="WfcpEstatus" EntityType="WFOCModel.WfcpEstatus" />
+    <EntitySet Name="WfcpMoneda" EntityType="WFOCModel.WfcpMoneda" />
+    <EntitySet Name="WfcpNuevaPartida" EntityType="WFOCModel.WfcpNuevaPartida" />
+    <EntitySet Name="WfcpRol" EntityType="WFOCModel.WfcpRol" />
+    <EntitySet Name="WfcpTipoProcuracion" EntityType="WFOCModel.WfcpTipoProcuracion" />
+    <EntitySet Name="WfcpUsuario" EntityType="WFOCModel.WfcpUsuario" />
+    <EntitySet Name="WfcpUsuarioInRol" EntityType="WFOCModel.WfcpUsuarioInRol" />
+    <EntitySet Name="WfcpWorkflow" EntityType="WFOCModel.WfcpWorkflow" />
+    <AssociationSet Name="FK_WfcpCambioPrecio_WfcpDocumento" Association="WFOCModel.FK_WfcpCambioPrecio_WfcpDocumento">
+      <End Role="WfcpDocumento" EntitySet="WfcpDocumento" />
+      <End Role="WfcpCambioPrecio" EntitySet="WfcpCambioPrecio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpCambioPrecio_WfcpMoneda" Association="WFOCModel.FK_WfcpCambioPrecio_WfcpMoneda">
+      <End Role="WfcpMoneda" EntitySet="WfcpMoneda" />
+      <End Role="WfcpCambioPrecio" EntitySet="WfcpCambioPrecio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpDocumento_Estatus_WfcpDocumento" Association="WFOCModel.FK_WfcpDocumento_Estatus_WfcpDocumento">
+      <End Role="WfcpDocumento" EntitySet="WfcpDocumento" />
+      <End Role="WfcpDocumento_Estatus" EntitySet="WfcpDocumento_Estatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpDocumento_WfcpWorkflow" Association="WFOCModel.FK_WfcpDocumento_WfcpWorkflow">
+      <End Role="WfcpWorkflow" EntitySet="WfcpWorkflow" />
+      <End Role="WfcpDocumento" EntitySet="WfcpDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpNuevaPartida_WfcpDocumento" Association="WFOCModel.FK_WfcpNuevaPartida_WfcpDocumento">
+      <End Role="WfcpDocumento" EntitySet="WfcpDocumento" />
+      <End Role="WfcpNuevaPartida" EntitySet="WfcpNuevaPartida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpDocumento_Estatus_WfcpEstatus" Association="WFOCModel.FK_WfcpDocumento_Estatus_WfcpEstatus">
+      <End Role="WfcpEstatus" EntitySet="WfcpEstatus" />
+      <End Role="WfcpDocumento_Estatus" EntitySet="WfcpDocumento_Estatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpDocumento_Estatus_WfcpRol" Association="WFOCModel.FK_WfcpDocumento_Estatus_WfcpRol">
+      <End Role="WfcpRol" EntitySet="WfcpRol" />
+      <End Role="WfcpDocumento_Estatus" EntitySet="WfcpDocumento_Estatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpEstatus_WfcpWorkflow" Association="WFOCModel.FK_WfcpEstatus_WfcpWorkflow">
+      <End Role="WfcpWorkflow" EntitySet="WfcpWorkflow" />
+      <End Role="WfcpEstatus" EntitySet="WfcpEstatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpNuevaPartida_WfcpMoneda" Association="WFOCModel.FK_WfcpNuevaPartida_WfcpMoneda">
+      <End Role="WfcpMoneda" EntitySet="WfcpMoneda" />
+      <End Role="WfcpNuevaPartida" EntitySet="WfcpNuevaPartida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpNuevaPartida_WfcpTipoProcuracion" Association="WFOCModel.FK_WfcpNuevaPartida_WfcpTipoProcuracion">
+      <End Role="WfcpTipoProcuracion" EntitySet="WfcpTipoProcuracion" />
+      <End Role="WfcpNuevaPartida" EntitySet="WfcpNuevaPartida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpUsuarioInRol_WfcpRol" Association="WFOCModel.FK_WfcpUsuarioInRol_WfcpRol">
+      <End Role="WfcpRol" EntitySet="WfcpRol" />
+      <End Role="WfcpUsuarioInRol" EntitySet="WfcpUsuarioInRol" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WfcpUsuarioInRol_WfcpUsuario" Association="WFOCModel.FK_WfcpUsuarioInRol_WfcpUsuario">
+      <End Role="WfcpUsuario" EntitySet="WfcpUsuario" />
+      <End Role="WfcpUsuarioInRol" EntitySet="WfcpUsuarioInRol" />
+    </AssociationSet>
+    <EntitySet Name="WfcpUnidadMedida" EntityType="WFOCModel.WfcpUnidadMedida" />
+    <AssociationSet Name="FK_WfcpNuevaPartida_WfcpUnidadMedida" Association="WFOCModel.FK_WfcpNuevaPartida_WfcpUnidadMedida">
+      <End Role="WfcpUnidadMedida" EntitySet="WfcpUnidadMedida" />
+      <End Role="WfcpNuevaPartida" EntitySet="WfcpNuevaPartida" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="WfcpCambioPrecio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentoId" Type="Int32" Nullable="false" />
+    <Property Name="documento_oc" Type="Int64" Nullable="false" />
+    <Property Name="no_parte" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Double" Nullable="false" />
+    <Property Name="MonedaId" Type="Int32" Nullable="false" />
+    <Property Name="fecha_punto_quiebre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="justificacion" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ITEM_NO" Type="Int32" />
+    <Property Name="KTMGN" Type="Double" />
+    <Property Name="MEINS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NETPBR" Type="Double" />
+    <Property Name="PEINH" Type="Double" />
+    <Property Name="fecha_validacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="WfcpDocumento" Relationship="WFOCModel.FK_WfcpCambioPrecio_WfcpDocumento" FromRole="WfcpCambioPrecio" ToRole="WfcpDocumento" />
+    <NavigationProperty Name="WfcpMoneda" Relationship="WFOCModel.FK_WfcpCambioPrecio_WfcpMoneda" FromRole="WfcpCambioPrecio" ToRole="WfcpMoneda" />
+  </EntityType>
+  <EntityType Name="WfcpDocumento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkflowId" Type="Int32" Nullable="false" />
+    <Property Name="documento" Type="Int64" Nullable="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ZFM_SA_CREA_SOL" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpCambioPrecio" Relationship="WFOCModel.FK_WfcpCambioPrecio_WfcpDocumento" FromRole="WfcpDocumento" ToRole="WfcpCambioPrecio" />
+    <NavigationProperty Name="WfcpDocumento_Estatus" Relationship="WFOCModel.FK_WfcpDocumento_Estatus_WfcpDocumento" FromRole="WfcpDocumento" ToRole="WfcpDocumento_Estatus" />
+    <NavigationProperty Name="WfcpWorkflow" Relationship="WFOCModel.FK_WfcpDocumento_WfcpWorkflow" FromRole="WfcpDocumento" ToRole="WfcpWorkflow" />
+    <NavigationProperty Name="WfcpNuevaPartida" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpDocumento" FromRole="WfcpDocumento" ToRole="WfcpNuevaPartida" />
+    <Property Name="ZFM_SA_ACT_PRECIO" Type="Boolean" />
+    <Property Name="ZFM_SA_NEW_POS" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="WfcpDocumento_Estatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentoId" Type="Int32" Nullable="false" />
+    <Property Name="EstatusId" Type="Int32" Nullable="false" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_estatus" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="metodo_autorizacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RolId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WfcpDocumento" Relationship="WFOCModel.FK_WfcpDocumento_Estatus_WfcpDocumento" FromRole="WfcpDocumento_Estatus" ToRole="WfcpDocumento" />
+    <NavigationProperty Name="WfcpEstatus" Relationship="WFOCModel.FK_WfcpDocumento_Estatus_WfcpEstatus" FromRole="WfcpDocumento_Estatus" ToRole="WfcpEstatus" />
+    <NavigationProperty Name="WfcpRol" Relationship="WFOCModel.FK_WfcpDocumento_Estatus_WfcpRol" FromRole="WfcpDocumento_Estatus" ToRole="WfcpRol" />
+  </EntityType>
+  <EntityType Name="WfcpEstatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="WorkflowId" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valido" Type="Boolean" Nullable="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WfcpDocumento_Estatus" Relationship="WFOCModel.FK_WfcpDocumento_Estatus_WfcpEstatus" FromRole="WfcpEstatus" ToRole="WfcpDocumento_Estatus" />
+    <NavigationProperty Name="WfcpWorkflow" Relationship="WFOCModel.FK_WfcpEstatus_WfcpWorkflow" FromRole="WfcpEstatus" ToRole="WfcpWorkflow" />
+  </EntityType>
+  <EntityType Name="WfcpMoneda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpCambioPrecio" Relationship="WFOCModel.FK_WfcpCambioPrecio_WfcpMoneda" FromRole="WfcpMoneda" ToRole="WfcpCambioPrecio" />
+    <NavigationProperty Name="WfcpNuevaPartida" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpMoneda" FromRole="WfcpMoneda" ToRole="WfcpNuevaPartida" />
+  </EntityType>
+  <EntityType Name="WfcpNuevaPartida">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentoId" Type="Int32" Nullable="false" />
+    <Property Name="no_proveedor" Type="Int32" Nullable="false" />
+    <Property Name="documento_oc" Type="Int64" Nullable="false" />
+    <Property Name="TipoProcuracionId" Type="Int32" Nullable="false" />
+    <Property Name="no_parte" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="target" Type="Double" Nullable="false" />
+    <Property Name="precio" Type="Double" Nullable="false" />
+    <Property Name="MonedaId" Type="Int32" Nullable="false" />
+    <Property Name="fecha_punto_quiebre" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="justificacion" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_actualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ITEM_NO" Type="Int32" />
+    <Property Name="LIFNR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PSTYP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KTMNG" Type="Double" />
+    <Property Name="NETPR" Type="Double" />
+    <Property Name="PEINH" Type="Double" />
+    <Property Name="BSTAE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ETFZ1" Type="Double" />
+    <Property Name="ABUEB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LOEKZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_validacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="WfcpDocumento" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpDocumento" FromRole="WfcpNuevaPartida" ToRole="WfcpDocumento" />
+    <NavigationProperty Name="WfcpMoneda" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpMoneda" FromRole="WfcpNuevaPartida" ToRole="WfcpMoneda" />
+    <NavigationProperty Name="WfcpTipoProcuracion" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpTipoProcuracion" FromRole="WfcpNuevaPartida" ToRole="WfcpTipoProcuracion" />
+    <Property Name="UnidadMedidaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WfcpUnidadMedida" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpUnidadMedida" FromRole="WfcpNuevaPartida" ToRole="WfcpUnidadMedida" />
+  </EntityType>
+  <EntityType Name="WfcpRol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpDocumento_Estatus" Relationship="WFOCModel.FK_WfcpDocumento_Estatus_WfcpRol" FromRole="WfcpRol" ToRole="WfcpDocumento_Estatus" />
+    <NavigationProperty Name="WfcpUsuarioInRol" Relationship="WFOCModel.FK_WfcpUsuarioInRol_WfcpRol" FromRole="WfcpRol" ToRole="WfcpUsuarioInRol" />
+  </EntityType>
+  <EntityType Name="WfcpTipoProcuracion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WfcpNuevaPartida" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpTipoProcuracion" FromRole="WfcpTipoProcuracion" ToRole="WfcpNuevaPartida" />
+  </EntityType>
+  <EntityType Name="WfcpUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpUsuarioInRol" Relationship="WFOCModel.FK_WfcpUsuarioInRol_WfcpUsuario" FromRole="WfcpUsuario" ToRole="WfcpUsuarioInRol" />
+  </EntityType>
+  <EntityType Name="WfcpUsuarioInRol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="RolId" Type="Int32" Nullable="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpRol" Relationship="WFOCModel.FK_WfcpUsuarioInRol_WfcpRol" FromRole="WfcpUsuarioInRol" ToRole="WfcpRol" />
+    <NavigationProperty Name="WfcpUsuario" Relationship="WFOCModel.FK_WfcpUsuarioInRol_WfcpUsuario" FromRole="WfcpUsuarioInRol" ToRole="WfcpUsuario" />
+  </EntityType>
+  <EntityType Name="WfcpWorkflow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpDocumento" Relationship="WFOCModel.FK_WfcpDocumento_WfcpWorkflow" FromRole="WfcpWorkflow" ToRole="WfcpDocumento" />
+    <NavigationProperty Name="WfcpEstatus" Relationship="WFOCModel.FK_WfcpEstatus_WfcpWorkflow" FromRole="WfcpWorkflow" ToRole="WfcpEstatus" />
+  </EntityType>
+  <Association Name="FK_WfcpCambioPrecio_WfcpDocumento">
+    <End Type="WFOCModel.WfcpDocumento" Role="WfcpDocumento" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpCambioPrecio" Role="WfcpCambioPrecio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpDocumento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpCambioPrecio">
+        <PropertyRef Name="DocumentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpCambioPrecio_WfcpMoneda">
+    <End Type="WFOCModel.WfcpMoneda" Role="WfcpMoneda" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpCambioPrecio" Role="WfcpCambioPrecio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpMoneda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpCambioPrecio">
+        <PropertyRef Name="MonedaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpDocumento_Estatus_WfcpDocumento">
+    <End Type="WFOCModel.WfcpDocumento" Role="WfcpDocumento" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpDocumento_Estatus" Role="WfcpDocumento_Estatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpDocumento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpDocumento_Estatus">
+        <PropertyRef Name="DocumentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpDocumento_WfcpWorkflow">
+    <End Type="WFOCModel.WfcpWorkflow" Role="WfcpWorkflow" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpDocumento" Role="WfcpDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpWorkflow">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpDocumento">
+        <PropertyRef Name="WorkflowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpNuevaPartida_WfcpDocumento">
+    <End Type="WFOCModel.WfcpDocumento" Role="WfcpDocumento" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpNuevaPartida" Role="WfcpNuevaPartida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpDocumento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpNuevaPartida">
+        <PropertyRef Name="DocumentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpDocumento_Estatus_WfcpEstatus">
+    <End Type="WFOCModel.WfcpEstatus" Role="WfcpEstatus" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpDocumento_Estatus" Role="WfcpDocumento_Estatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpEstatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpDocumento_Estatus">
+        <PropertyRef Name="EstatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpDocumento_Estatus_WfcpRol">
+    <End Type="WFOCModel.WfcpRol" Role="WfcpRol" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpDocumento_Estatus" Role="WfcpDocumento_Estatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpRol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpDocumento_Estatus">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpEstatus_WfcpWorkflow">
+    <End Type="WFOCModel.WfcpWorkflow" Role="WfcpWorkflow" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpEstatus" Role="WfcpEstatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpWorkflow">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpEstatus">
+        <PropertyRef Name="WorkflowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpNuevaPartida_WfcpMoneda">
+    <End Type="WFOCModel.WfcpMoneda" Role="WfcpMoneda" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpNuevaPartida" Role="WfcpNuevaPartida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpMoneda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpNuevaPartida">
+        <PropertyRef Name="MonedaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpNuevaPartida_WfcpTipoProcuracion">
+    <End Type="WFOCModel.WfcpTipoProcuracion" Role="WfcpTipoProcuracion" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpNuevaPartida" Role="WfcpNuevaPartida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpTipoProcuracion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpNuevaPartida">
+        <PropertyRef Name="TipoProcuracionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpUsuarioInRol_WfcpRol">
+    <End Type="WFOCModel.WfcpRol" Role="WfcpRol" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpUsuarioInRol" Role="WfcpUsuarioInRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpRol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpUsuarioInRol">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WfcpUsuarioInRol_WfcpUsuario">
+    <End Type="WFOCModel.WfcpUsuario" Role="WfcpUsuario" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpUsuarioInRol" Role="WfcpUsuarioInRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpUsuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpUsuarioInRol">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="WfcpUnidadMedida">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="WfcpNuevaPartida" Relationship="WFOCModel.FK_WfcpNuevaPartida_WfcpUnidadMedida" FromRole="WfcpUnidadMedida" ToRole="WfcpNuevaPartida" />
+  </EntityType>
+  <Association Name="FK_WfcpNuevaPartida_WfcpUnidadMedida">
+    <End Type="WFOCModel.WfcpUnidadMedida" Role="WfcpUnidadMedida" Multiplicity="1" />
+    <End Type="WFOCModel.WfcpNuevaPartida" Role="WfcpNuevaPartida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WfcpUnidadMedida">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="WfcpNuevaPartida">
+        <PropertyRef Name="UnidadMedidaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

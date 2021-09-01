@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EC3A1CA-3E47-4132-81C3-7A4E3AC77016}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Job.PricesWF</RootNamespace>
+    <AssemblyName>Job.PricesWF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco">
+      <HintPath>..\..\..\..\..\..\..\Librerias SAP x64\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils">
+      <HintPath>..\..\..\..\..\..\..\Librerias SAP x64\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ET_RETURN.cs" />
+    <Compile Include="Model\ModelWFOC.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelWFOC.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelWFOC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelWFOC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelWFOC.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SAPConector30.cs" />
+    <Compile Include="Model\WfcpCambioPrecio.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpDocumento.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpDocumento_Estatus.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpEstatus.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpMoneda.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpNuevaPartida.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpRol.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpTipoProcuracion.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpUnidadMedida.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpUsuario.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpUsuarioInRol.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WfcpWorkflow.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ZMMTT_ME32L_ACT_PRICE.cs" />
+    <Compile Include="Model\ZMMTT_ME32L_SOL_POS.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\WfcpLog_ET_RETURN.cs">
+      <DependentUpon>ModelWFOC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sincronizacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model\ModelWFOC.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelWFOC.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ModelWFOC.edmx.diagram">
+      <DependentUpon>ModelWFOC.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ModelWFOC.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelWFOC.Context.cs</LastGenOutput>
+      <DependentUpon>ModelWFOC.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\ModelWFOC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelWFOC.edmx</DependentUpon>
+      <LastGenOutput>ModelWFOC.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

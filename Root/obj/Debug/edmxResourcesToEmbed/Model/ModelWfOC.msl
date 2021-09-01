@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WFOCModelStoreContainer" CdmEntityContainer="WFOCEntities">
+    <EntitySetMapping Name="WfcpMoneda">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpMoneda">
+        <MappingFragment StoreEntitySet="WfcpMoneda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpRol">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpRol">
+        <MappingFragment StoreEntitySet="WfcpRol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpUsuario">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpUsuario">
+        <MappingFragment StoreEntitySet="WfcpUsuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpUsuarioInRol">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpUsuarioInRol">
+        <MappingFragment StoreEntitySet="WfcpUsuarioInRol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpDocumento">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpDocumento">
+        <MappingFragment StoreEntitySet="WfcpDocumento">
+          <ScalarProperty Name="ZFM_SA_NEW_POS" ColumnName="ZFM_SA_NEW_POS" />
+          <ScalarProperty Name="ZFM_SA_ACT_PRECIO" ColumnName="ZFM_SA_ACT_PRECIO" />
+          <ScalarProperty Name="ZFM_SA_CREA_SOL" ColumnName="ZFM_SA_CREA_SOL" />
+          <ScalarProperty Name="fecha_actualizacion" ColumnName="fecha_actualizacion" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="WorkflowId" ColumnName="WorkflowId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpWorkflow">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpWorkflow">
+        <MappingFragment StoreEntitySet="WfcpWorkflow">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpDocumento_Estatus">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpDocumento_Estatus">
+        <MappingFragment StoreEntitySet="WfcpDocumento_Estatus">
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="metodo_autorizacion" ColumnName="metodo_autorizacion" />
+          <ScalarProperty Name="fecha_estatus" ColumnName="fecha_estatus" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+          <ScalarProperty Name="DocumentoId" ColumnName="DocumentoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpEstatus">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpEstatus">
+        <MappingFragment StoreEntitySet="WfcpEstatus">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="valido" ColumnName="valido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="WorkflowId" ColumnName="WorkflowId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpNuevaPartida">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpNuevaPartida">
+        <MappingFragment StoreEntitySet="WfcpNuevaPartida">
+          <ScalarProperty Name="UnidadMedidaId" ColumnName="UnidadMedidaId" />
+          <ScalarProperty Name="fecha_validacion" ColumnName="fecha_validacion" />
+          <ScalarProperty Name="LOEKZ" ColumnName="LOEKZ" />
+          <ScalarProperty Name="ABUEB" ColumnName="ABUEB" />
+          <ScalarProperty Name="ETFZ1" ColumnName="ETFZ1" />
+          <ScalarProperty Name="BSTAE" ColumnName="BSTAE" />
+          <ScalarProperty Name="PEINH" ColumnName="PEINH" />
+          <ScalarProperty Name="NETPR" ColumnName="NETPR" />
+          <ScalarProperty Name="KTMNG" ColumnName="KTMNG" />
+          <ScalarProperty Name="PSTYP" ColumnName="PSTYP" />
+          <ScalarProperty Name="LIFNR" ColumnName="LIFNR" />
+          <ScalarProperty Name="ITEM_NO" ColumnName="ITEM_NO" />
+          <ScalarProperty Name="fecha_actualizacion" ColumnName="fecha_actualizacion" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="justificacion" ColumnName="justificacion" />
+          <ScalarProperty Name="fecha_punto_quiebre" ColumnName="fecha_punto_quiebre" />
+          <ScalarProperty Name="MonedaId" ColumnName="MonedaId" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="target" ColumnName="target" />
+          <ScalarProperty Name="no_parte" ColumnName="no_parte" />
+          <ScalarProperty Name="TipoProcuracionId" ColumnName="TipoProcuracionId" />
+          <ScalarProperty Name="documento_oc" ColumnName="documento_oc" />
+          <ScalarProperty Name="no_proveedor" ColumnName="no_proveedor" />
+          <ScalarProperty Name="DocumentoId" ColumnName="DocumentoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spSendMail_WfcpDocumento" FunctionName="WFOCModel.Store.spSendMail_WfcpDocumento" />
+    <EntitySetMapping Name="WfcpLog_ET_RETURN">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpLog_ET_RETURN">
+        <MappingFragment StoreEntitySet="WfcpLog_ET_RETURN">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+          <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+          <ScalarProperty Name="IDENTIFICADOR" ColumnName="IDENTIFICADOR" />
+          <ScalarProperty Name="fecha_insert" ColumnName="fecha_insert" />
+          <ScalarProperty Name="DocumentoId" ColumnName="DocumentoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpCambioPrecio">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpCambioPrecio">
+        <MappingFragment StoreEntitySet="WfcpCambioPrecio">
+          <ScalarProperty Name="fecha_validacion" ColumnName="fecha_validacion" />
+          <ScalarProperty Name="PEINH" ColumnName="PEINH" />
+          <ScalarProperty Name="NETPBR" ColumnName="NETPBR" />
+          <ScalarProperty Name="MEINS" ColumnName="MEINS" />
+          <ScalarProperty Name="KTMGN" ColumnName="KTMGN" />
+          <ScalarProperty Name="ITEM_NO" ColumnName="ITEM_NO" />
+          <ScalarProperty Name="fecha_actualizacion" ColumnName="fecha_actualizacion" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="justificacion" ColumnName="justificacion" />
+          <ScalarProperty Name="fecha_punto_quiebre" ColumnName="fecha_punto_quiebre" />
+          <ScalarProperty Name="MonedaId" ColumnName="MonedaId" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="no_parte" ColumnName="no_parte" />
+          <ScalarProperty Name="documento_oc" ColumnName="documento_oc" />
+          <ScalarProperty Name="DocumentoId" ColumnName="DocumentoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpTipoProcuracion">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpTipoProcuracion">
+        <MappingFragment StoreEntitySet="WfcpTipoProcuracion">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpUnidadMedida">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpUnidadMedida">
+        <MappingFragment StoreEntitySet="WfcpUnidadMedida">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WfcpDocumento_Proveedor">
+      <EntityTypeMapping TypeName="WFOCModel.WfcpDocumento_Proveedor">
+        <MappingFragment StoreEntitySet="WfcpDocumento_Proveedor">
+          <ScalarProperty Name="NAME_VENDOR" ColumnName="NAME_VENDOR" />
+          <ScalarProperty Name="LIFNR" ColumnName="LIFNR" />
+          <ScalarProperty Name="documento_oc" ColumnName="documento_oc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
